@@ -20,6 +20,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
+vim.g.python3_host_prog = vim.fn.expand("~/.config/nvim/.venv/bin/python")
+
+
 -- Load plugins
 require("lazy").setup({
     -- LSP
@@ -139,6 +143,21 @@ require("lazy").setup({
         lazy = false,
         priority = 100,
     },
+    {
+      "benlubas/molten-nvim",
+      version = "^1.0.0",
+      dependencies = { "3rd/image.nvim" },  -- optional, for image support
+      build = ":UpdateRemotePlugins",
+      init = function()
+        vim.g.molten_output_virt_lines = true  -- inline output
+        vim.g.molten_auto_open_output = false
+      end,
+    }
 })
 
 vim.cmd[[colorscheme catppuccin-mocha]]
+
+
+vim.keymap.set("n", "<leader>ml", ":MoltenEvaluateLine<CR>", { silent = true })
+vim.keymap.set("v", "<leader>mv", ":<C-u>MoltenEvaluateVisual<CR>gv", { silent = true })
+vim.keymap.set("n", "<leader>mi", ":MoltenInit python3<CR>", { silent = true })
