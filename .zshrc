@@ -117,6 +117,7 @@ alias cat="bat"
 [ -f "/Users/akoskorosi/.ghcup/env" ] && . "/Users/akoskorosi/.ghcup/env" # ghcup-env
 
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/dotfiles/bin:$PATH"
 
 source ~/.oh-my-zsh/custom/themes/catppuccin/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
