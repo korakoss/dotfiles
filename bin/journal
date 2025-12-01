@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+JOURNAL_DIR="$HOME/writings/journal"
+
+date="${1:-$(date +%Y-%m-%d)}"
+
+if [[ ! "$date" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+    echo "Invalid date format: $date (expected YYYY-MM-DD)" >&2
+    exit 1
+fi
+
+if [[ ! -d "$JOURNAL_DIR" ]]; then
+    echo "Journal directory not found: $JOURNAL_DIR" >&2
+    exit 1
+fi
+
+file="$JOURNAL_DIR/$date.md"
+
+if [[ ! -e "$file" && -n "$1" ]]; then
+    read -p "Create $date.md? [y/N] " -n 1 -r
+    echo
+    [[ $REPLY =~ ^[Yy]$ ]] || exit 0
+fi
+
+nvim "$file"
