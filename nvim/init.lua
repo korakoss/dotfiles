@@ -36,13 +36,19 @@ require("lazy").setup({
         config = function()
             require("mason").setup()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls" }
+                ensure_installed = { "lua_ls", "rust_analyzer", "pyright" }
             })
 
             vim.lsp.config('lua_ls', {})
             vim.lsp.enable('lua_ls')
+            
+            vim.lsp.config('rust_analyzer', {})
+            vim.lsp.enable('rust_analyzer')
 
-            -- LSP keybindings
+            vim.lsp.config('pyright', {})
+            vim.lsp.enable('pyright')
+
+                        -- LSP keybindings
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
             vim.keymap.set('n', 'K', vim.lsp.buf.hover)
             vim.keymap.set('n', 'gr', vim.lsp.buf.references)
@@ -83,7 +89,7 @@ require("lazy").setup({
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
-                ensure_installed = { "lua", "python", "vim" },
+                ensure_installed = { "lua", "python", "vim", "rust"},
                 highlight = { enable = true },
             })
         end
