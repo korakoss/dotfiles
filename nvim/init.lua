@@ -8,6 +8,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+-- Use a venv for the REPL to work without polluting globenv
 vim.g.python3_host_prog = vim.fn.expand("~/dotfiles/nvim/.venv/bin/python")
 
 -- Bootstrap lazy.nvim
@@ -21,8 +22,6 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
-
-
 
 
 -- Load plugins
@@ -79,8 +78,6 @@ require("lazy").setup({
             })
         end
     },
-
-    -- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
@@ -91,58 +88,11 @@ require("lazy").setup({
             })
         end
     },
-
-    -- Colorscheme
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 100,
-    },
-    {
-        "rebelot/kanagawa.nvim",
-        lazy = false,
-        priority = 100,
-    },
     {
         "catppuccin/nvim",
         name = "catppuccin",
         lazy = false,
         priority = 1000,
-    },
-    {
-        "EdenEast/nightfox.nvim",
-        lazy = false,
-        priority = 100,
-    },
-    {
-        "ellisonleao/gruvbox.nvim",
-        lazy = false,
-        priority = 100,
-    },
-    {
-        "navarasu/onedark.nvim",
-        lazy = false,
-        priority = 100,
-    },
-    {
-        "tanvirtin/monokai.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "Mofiqul/vscode.nvim",
-        lazy = false,
-        priority = 100,
-    },
-    {
-        "sainnhe/everforest",
-        lazy = false,
-        priority = 100,
-    },
-    {
-        "sainnhe/sonokai",
-        lazy = false,
-        priority = 100,
     },
     {
       "benlubas/molten-nvim",
