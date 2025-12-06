@@ -118,3 +118,5 @@ vim.cmd[[colorscheme catppuccin-mocha]]
 vim.keymap.set("n", "<leader>ml", ":MoltenEvaluateLine<CR>", { silent = true })
 vim.keymap.set("v", "<leader>mv", ":<C-u>MoltenEvaluateVisual<CR>gv", { silent = true })
 vim.keymap.set("n", "<leader>mi", ":MoltenInit python3<CR>", { silent = true })
+
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
