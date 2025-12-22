@@ -109,6 +109,10 @@ require("lazy").setup({
         vim.g.molten_output_virt_lines = true  -- inline output
         vim.g.molten_auto_open_output = false
       end,
+    },
+    {
+      'nathangrigg/vim-beancount',
+      ft = 'beancount',  
     }
 })
 
