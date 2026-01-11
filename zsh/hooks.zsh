@@ -29,6 +29,10 @@ fse() {
     [[ -n "$file" ]] && $EDITOR "$file"
 }
 
+fem() {
+    nvim -O $(fzf -m)      
+}
+
 fsf() {
     find "$SPACE_ROOT" -type f | fzf --preview 'cat {}'
 }
@@ -50,6 +54,7 @@ h() {
     echo "=== General ==="
     echo "  fe      fuzzy edit from here"
     echo "  fse     fuzzy edit from space root"
+    echo "  fem     fuzzy edit multiple from here"
     echo "  jsr     jump to space root"
     echo "  fsf     fuzzy find in space"
     echo "  fsc     fuzzy find in space then cat"
