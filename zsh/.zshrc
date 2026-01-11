@@ -2,8 +2,7 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-ZSHRC_DIR="${0:A:h}"
+ZSHRC_DIR=~/dotfiles/zsh
 
 export ZSH="$HOME/.oh-my-zsh"
 
