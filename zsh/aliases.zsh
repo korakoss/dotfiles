@@ -16,3 +16,4 @@ alias gcv="git commit"      # verbose/vim
 alias gs="git status"
 alias gd="git diff"
 alias gp="git push"
+alias ggr="git log --oneline --all --graph"
