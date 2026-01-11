@@ -38,3 +38,18 @@ case "$(hostname)" in
     *MacBook*|mac) source "$ZSHRC_DIR/hosts/mac.zsh" ;;
     pi|raspberrypi) source "$ZSHRC_DIR/hosts/pi.zsh" ;;
 esac
+
+
+# Run the spaces stuff when switching to a dir
+chpwd() {
+    unalias dn 2>/dev/null  # clear previous
+    
+    for f in "$ZSHRC_DIR/spaces/"*.zsh; do
+        project=$(basename "$f" .zsh)
+        if [[ "$(pwd)" == *"$project"* ]]; then
+            source "$f"
+            break
+        fi
+    done
+}
+chpwd
