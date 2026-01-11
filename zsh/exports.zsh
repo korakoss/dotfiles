@@ -1,5 +1,5 @@
 # Adding things to PATH
-export PATH="$HOME/programming_projects/minicompiler:$PATH"
+export PATH="$HOME/programming_projects/minicompiler/scripts:$PATH"
 
 # Important folders
 export YUM="$HOME/programming_projects/minicompiler"
