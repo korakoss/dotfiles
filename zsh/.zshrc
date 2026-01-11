@@ -33,6 +33,7 @@ source ~/.oh-my-zsh/custom/themes/catppuccin/themes/catppuccin_mocha-zsh-syntax-
 # Source my custom configs 
 source ~/dotfiles/zsh/aliases.zsh
 source ~/dotfiles/zsh/exports.zsh
+source "$ZSHRC_DIR/hooks.zsh"
 
 case "$(hostname)" in
     *MacBook*|mac) source "$ZSHRC_DIR/hosts/mac.zsh" ;;
@@ -40,16 +41,3 @@ case "$(hostname)" in
 esac
 
 
-# Run the spaces stuff when switching to a dir
-chpwd() {
-    unalias dn 2>/dev/null  # clear previous
-    
-    for f in "$ZSHRC_DIR/spaces/"*.zsh; do
-        project=$(basename "$f" .zsh)
-        if [[ "$(pwd)" == *"$project"* ]]; then
-            source "$f"
-            break
-        fi
-    done
-}
-chpwd
