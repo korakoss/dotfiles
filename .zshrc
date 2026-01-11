@@ -11,9 +11,9 @@ plugins=(zsh-syntax-highlighting z zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-# Load aliases
+# Source my custom configs 
 source ~/dotfiles/zsh/aliases.zsh
-
+source ~/dotfiles/zsh/exports.zsh
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'

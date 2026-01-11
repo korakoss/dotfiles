@@ -17,3 +17,8 @@ alias gs="git status"
 alias gd="git diff"
 alias gp="git push"
 alias ggr="git log --oneline --all --graph"
+
+
+# Other
+alias zshc="nvim ~/dotfiles/.zshrc"
+alias zshr="exec zsh"
