@@ -21,4 +21,4 @@ alias gpl="git pull"
 
 # Other
 alias zshc="nvim ~/dotfiles/.zshrc"
-alias zshr="exec zsh"
+alias zr="exec zsh"

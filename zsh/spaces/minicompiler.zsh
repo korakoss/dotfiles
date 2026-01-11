@@ -1,4 +1,3 @@
-
 SPACE_HELP="  dn       edit devnotes
   yumc     compile and run <name>
   yute     run tests
@@ -7,4 +6,4 @@ SPACE_HELP="  dn       edit devnotes
   ypull    pull outputs"
 
 alias dn="$EDITOR ~/programming_projects/minicompiler/notes/DEVNOTES.md"
-
+alias cb="cargo build"
