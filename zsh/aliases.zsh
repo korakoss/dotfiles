@@ -9,7 +9,7 @@ alias pip="pip3"
 
 # Git
 alias ga="git add -u && git status"
-alias gaa="git add ."       # git add all
+alias gaa="git add . && git status"       # git add all
 alias gc="git commit -m"
 alias gcv="git commit"      # verbose/vim
 alias gs="git status"
