@@ -1,7 +1,6 @@
 # Plugin overwrites
-alias ls="eza --icons"
-alias cat="bat"
-
+command -v eza &> /dev/null && alias ls="eza --icons"
+command -v bat &> /dev/null && alias cat="bat"
 
 # Python
 alias py="python3"
@@ -17,6 +16,7 @@ alias gs="git status"
 alias gd="git diff"
 alias gp="git push"
 alias ggr="git log --oneline --all --graph"
+alias gpl="git pull"
 
 
 # Other
