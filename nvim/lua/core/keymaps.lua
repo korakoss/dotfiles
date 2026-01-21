@@ -10,3 +10,15 @@ vim.keymap.set('n', '<leader>fv', function()
     end
   })
 end)
+
+vim.keymap.set('n', '<leader>fh', function()
+  require('telescope.builtin').find_files({
+    attach_mappings = function(_, map)
+      map('i', '<CR>', require('telescope.actions').select_horizontal)
+      map('n', '<CR>', require('telescope.actions').select_horizontal)
+      return true
+    end
+  })
+end)
+
+
