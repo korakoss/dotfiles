@@ -11,7 +11,7 @@ vim.keymap.set('n', '<leader>fv', function()
   })
 end)
 
-vim.keymap.set('n', '<leader>fh', function()
+vim.keymap.set('n', '<leader>fu', function()
   require('telescope.builtin').find_files({
     attach_mappings = function(_, map)
       map('i', '<CR>', require('telescope.actions').select_horizontal)
