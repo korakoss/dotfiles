@@ -27,7 +27,7 @@ fi
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/dotfiles/bin:$PATH"
 
-source ~/dotfiles/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+source ~/dotfiles/zsh/catppuccin-mocha.zsh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
