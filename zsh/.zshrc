@@ -1,4 +1,8 @@
 # p10k instant prompt
+if [[ -z "$TMUX" ]]; then
+  exec tmux attach 2>/dev/null || exec tmux new
+fi
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -41,3 +45,5 @@ case "$(hostname)" in
     *MacBook*|mac) source "$ZSHRC_DIR/hosts/mac.zsh" ;;
     pi|raspberrypi) source "$ZSHRC_DIR/hosts/pi.zsh" ;;
 esac
+
+
