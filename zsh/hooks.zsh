@@ -20,7 +20,7 @@ chpwd() {
 }
 
 fe() {
-    local file=$(fzf --preview 'cat {}')
+    local file=$(fzf --preview 'cat {}' --query "${1:-}")
     [[ -n "$file" ]] && $EDITOR "$file"
 }
 
